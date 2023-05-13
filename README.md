@@ -43,7 +43,7 @@ Please check out the `README.md` for individual collection for more details.
 
 ## Community
 
-- [daeuniverse Telegram Group](https://t.me/daeuniverse)
+- [Daeuniverse Telegram Group](https://t.me/daeuniverse)
 
 ## Contributors
 
