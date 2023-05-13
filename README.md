@@ -37,6 +37,7 @@ pre-commit install
 ## Available Collections
 
 - [daeuniverse.geo-updater](https://github.com/daeuniverse/dae-galaxy/tree/master/collections/geo-updater)
+- [daeuniverse.maintenance](https://github.com/daeuniverse/dae-galaxy/tree/master/collections/maintenance)
 
 Please check out the `README.md` for individual collection for more details.
 
