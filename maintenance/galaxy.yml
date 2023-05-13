@@ -1,0 +1,17 @@
+namespace: daeuniverse
+name: maintenance
+version: 1.0.0
+readme: README.md
+authors:
+  - Kevin Yu <kevinyu211@yahoo.com>
+description: ansible collection for server maintenance related operations
+license_file: 'LICENSE'
+tags:
+  - daeuniverse
+  - maintenance
+dependencies: {}
+repository: http://github.com/daeuniverse/dae-galaxy
+documentation: https://github.com/daeuniverse/dae-galaxy/tree/master/collections/maintenance
+homepage: https://github.com/daeuniverse/dae-galaxy/tree/master/collections/maintenance
+issues: http://github.com/daeuniverse/dae-galaxy/issues
+build_ignore: []
