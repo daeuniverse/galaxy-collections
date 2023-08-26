@@ -11,7 +11,10 @@ Tested with the Ansible Core `2.8`, `2.12`, and `2.13` releases, and the current
 You can install the `daeuniverse.general` collection with the Ansible Galaxy CLI:
 
 ```bash
-dae-galaxy collection install git+https://github.com/daeuniverse/galaxy-collections#/collections/general,master
+# galaxy
+ansible-galaxy collection install daeuniverse.general --upgrade
+# git
+ansible-galaxy collection install git+https://github.com/daeuniverse/galaxy-collections#/collections/general,master
 ```
 
 You can also include it in a `requirements.yml` file and install it with `dae-galaxy collection install -r requirements.yml`, using the format:
