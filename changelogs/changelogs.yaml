@@ -1,6 +1,0 @@
-releases:
-  maintenance:
-    1.0.0:
-      changes:
-        major_changes:
-          - initial release

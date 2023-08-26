@@ -1,0 +1,17 @@
+namespace: daeuniverse
+name: general
+version: 1.0.3
+readme: README.md
+authors:
+  - Kevin Yu <kevinyu211@yahoo.com>
+description: ansible role for server general operations
+license_file: 'LICENSE'
+tags:
+  - daeuniverse
+  - general
+dependencies: {}
+repository: http://github.com/daeuniverse/galaxy-collections
+documentation: https://github.com/daeuniverse/galaxy-collections/tree/master/collections/general
+homepage: https://github.com/daeuniverse/galaxy-collections
+issues: http://github.com/daeuniverse/galaxy-collections/issues
+build_ignore: []
