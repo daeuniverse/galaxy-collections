@@ -9,7 +9,7 @@ galaxy_info:
   license: "MIT"
   tags:
     - daeuniverse
-    - maintenance
+    - general
   platforms:
     - name: GenericLinux
       versions:
