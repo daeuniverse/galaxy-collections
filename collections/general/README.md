@@ -33,7 +33,7 @@ To install a specific version of the collection, using the format:
 collections:
   - name: git+https://github.com/daeuniverse/galaxy-collections.git#/collections/general
     type: git
-    version: daeuniverse.general.v1.0.0
+    version: daeuniverse.general.v1.1.0
 ```
 
 Upgrade the exiting collection with the following command:
