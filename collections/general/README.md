@@ -12,7 +12,7 @@ You can install the `daeuniverse.general` collection with the Ansible Galaxy CLI
 
 ```bash
 # galaxy
-ansible-galaxy collection install daeuniverse.general --upgrade
+ansible-galaxy collection install daeuniverse.general
 # git
 ansible-galaxy collection install git+https://github.com/daeuniverse/galaxy-collections#/collections/general,master
 ```
