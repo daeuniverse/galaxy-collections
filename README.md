@@ -19,8 +19,6 @@
 
 CopyRight 2023 daeuniverse. All rights reserved.
 
-Maintainer: [ Kevin Yu (@yqlbu) ](https://github.com/yqlbu)
-
 This repo serves to provide our community users a better way to automate maintenance work related to Dae. Feel free to contribute.
 
 ## Pre-commit Hooks
