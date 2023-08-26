@@ -40,6 +40,10 @@ pre-commit install
 
 Please check out the `README.md` for individual collection for more details.
 
+## Get Started
+
+Check out usage in [collections](https://github.com/daeuniverse/dae-galaxy/tree/master/collections)
+
 ## Community
 
 - [Daeuniverse Telegram Group](https://t.me/daeuniverse)
