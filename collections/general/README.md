@@ -61,6 +61,20 @@ After installing the collection, you may directly use the roles in your playbook
 
 We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [daeuniverse/galaxy-collections](https://github.com/daeuniverse/galaxy-collections) repository. See [How to Contribute](https://github.com/daeuniverse/galaxy-collections/blob/master/docs/contribute.md) for more details.
 
+## Maintenance
+
+### Build and pack a newer version of collection
+
+```bash
+ansible-galaxy collection build
+```
+
+### Publish an existing collection
+
+```bash
+ansible-galaxy collection publish --api <GALAXY_API_KEY> ./daeuniverse-general-<VERSION>.tar.gz
+```
+
 ## License
 
 [MIT (C) daeuniverse](https://github.com/yqlbu/daeuniverse/galaxy-collections/blob/master/LICENSE)
