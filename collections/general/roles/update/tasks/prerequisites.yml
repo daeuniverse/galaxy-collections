@@ -1,0 +1,7 @@
+---
+- name: Install prerequisites
+  block:
+    - name: Install unzip if unzip is absent
+      package:
+        name: unzip
+        state: present
