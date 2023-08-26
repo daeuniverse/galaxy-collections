@@ -5,7 +5,3 @@
       package:
         name: unzip
         state: present
-    - name: Install PyGithub Python package
-      pip:
-        name: PyGithub
-        state: present
