@@ -1,4 +1,4 @@
-# daeuniverse general Collection
+# daeuniverse general collection
 
 The `daeuniverse-general-collection` includes a variety of Ansible content to help automate the general general workflow for servers that are based on the `debian` system. This collection is maintained by the daeuniverse core team.
 
