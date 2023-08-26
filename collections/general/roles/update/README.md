@@ -1,4 +1,4 @@
-# Ansible Collection Rule - daeuniverse.general.update
+# Ansible role - daeuniverse.general.update
 
 ## Use this role
 
