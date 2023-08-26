@@ -1,14 +1,5 @@
 # Ansible Collection Rule - daeuniverse.general.update
 
-## Dependencies
-
-- PyGithub
-
-```bash
-python3 -m venv venv
-venv/bin/pip3 install --user PyGitHub
-```
-
 ## Use this role
 
 After installing the collection, you may directly use this role in your playbook.

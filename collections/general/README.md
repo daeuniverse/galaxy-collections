@@ -6,15 +6,6 @@ The `daeuniverse-general-collection` includes a variety of Ansible content to he
 
 Tested with the Ansible Core `2.8`, `2.12`, and `2.13` releases, and the current development version of Ansible.
 
-## Dependencies
-
-- PyGithub
-
-```bash
-python3 -m venv venv
-venv/bin/pip3 install --user PyGitHub
-```
-
 ## Install this collection
 
 You can install the `daeuniverse.general` collection with the Ansible Galaxy CLI:
