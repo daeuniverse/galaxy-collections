@@ -1,0 +1,45 @@
+---
+- name: Install prerequisites
+  block:
+    - name: Install unzip if unzip is absent
+      package:
+        name: unzip
+        state: present
+
+- name: Extract run_id from input url
+  set_fact:
+    run_id: "{{ action_url | split('/') | last }}"
+
+- name: Download binary from GitHub Actions
+  get_url:
+    url: "{{ base_url }}/{{ run_id }}/dae-linux-x86_64.zip"
+    dest: /tmp/dae.zip
+
+- name: unzip dae.zip
+  unarchive:
+    remote_src: yes
+    src: /tmp/dae.zip
+    dest: /tmp
+
+- name: Copy binary
+  copy:
+    remote_src: yes
+    src: /tmp/dae-linux-x86_64
+    dest: /usr/bin/dae
+    mode: a+x
+
+- name: Restart systemd service
+  systemd:
+    name: "{{ systemd_service }}"
+    state: restarted
+
+- name: Verify version
+  block:
+    - name: Verify version
+      shell: |
+        dae --version
+      register: version
+    - name: Print output
+      debug:
+        msg: "{{ version.stdout }}"
+

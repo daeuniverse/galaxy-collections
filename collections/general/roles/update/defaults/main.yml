@@ -1,0 +1,3 @@
+---
+base_url: "https://nightly.link/daeuniverse/dae/actions/runs"
+systemd_service: dae

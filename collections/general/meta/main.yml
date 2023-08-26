@@ -4,7 +4,7 @@ dependencies: []
 galaxy_info:
   authors:
     - Kevin Yu <kevinyu211@yahoo.com>
-  description: ansible collection for server maintenance related operations
+  description: ansible collection for general operations
   min_ansible_version: "2.8"
   license: "MIT"
   tags:
