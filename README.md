@@ -3,14 +3,14 @@
     <em>Declare Ansible Collection as Code</em>
 </p>
 <p align="center">
-    <img src="https://custom-icon-badges.herokuapp.com/github/license/daeuniverse/dae-galaxy?logo=law&color=orange" alt="License"/>
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdaeuniverse%2Fdae-galaxy&count_bg=%23E80000&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false">
+    <img src="https://custom-icon-badges.herokuapp.com/github/license/daeuniverse/galaxy-collections?logo=law&color=orange" alt="License"/>
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdaeuniverse%2Fgalaxy-collections&count_bg=%23E80000&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false">
     <img src="https://img.shields.io/badge/ansible-v2.15.2-gray.svg?longCache=true&logo=ansible&colorB=red" alt="ansible-galaxy-collection"/>
     <a href="https://t.me/daeuniverse">
         <img src="https://img.shields.io/badge/join-us%20on%20telegram-gray.svg?longCache=true&logo=telegram&colorB=blue" alt="join-us-on-telegram"/>
     </a>
-    <img src="https://custom-icon-badges.herokuapp.com/github/issues-pr-closed/daeuniverse/dae-galaxy?color=purple&logo=git-pull-request&logoColor=white"/>
-    <img src="https://img.shields.io/github/last-commit/daeuniverse/dae-galaxy" alt="lastcommit"/>
+    <img src="https://custom-icon-badges.herokuapp.com/github/issues-pr-closed/daeuniverse/galaxy-collections?color=purple&logo=git-pull-request&logoColor=white"/>
+    <img src="https://img.shields.io/github/last-commit/daeuniverse/galaxy-collections" alt="lastcommit"/>
 </p>
 
 ## Introduction
@@ -36,13 +36,13 @@ pre-commit install
 
 ## Available Collections
 
-- [daeuniverse.general](https://github.com/daeuniverse/dae-galaxy/tree/master/collections/general)
+- [daeuniverse.general](https://github.com/daeuniverse/galaxy-collections/tree/master/collections/general)
 
 Please check out the `README.md` for individual collection for more details.
 
 ## Get Started
 
-Check out usage in [collections](https://github.com/daeuniverse/dae-galaxy/tree/master/collections)
+Check out usage in [collections](https://github.com/daeuniverse/galaxy-collections/tree/master/collections)
 
 ## Community
 
@@ -50,7 +50,7 @@ Check out usage in [collections](https://github.com/daeuniverse/dae-galaxy/tree/
 
 ## Contributors
 
-Special thanks goes to all [ contributors ](https://github.com/daeuniverse/dae-galaxy/graphs/contributors). If you would like to contribute, please see the [instructions](https://github.com/daeuniverse/dae-galaxy/blob/master/docs/contribute.md).
+Special thanks goes to all [ contributors ](https://github.com/daeuniverse/galaxy-collections/graphs/contributors). If you would like to contribute, please see the [instructions](https://github.com/daeuniverse/galaxy-collections/blob/master/docs/contribute.md).
 
 ## References
 
@@ -61,4 +61,4 @@ Special thanks goes to all [ contributors ](https://github.com/daeuniverse/dae-g
 
 ## License
 
-[MIT (C) daeuniverse](https://github.com/yqlbu/daeuniverse/dae-galaxy/blob/master/LICENSE)
+[MIT (C) daeuniverse](https://github.com/yqlbu/daeuniverse/galaxy-collections/blob/master/LICENSE)
