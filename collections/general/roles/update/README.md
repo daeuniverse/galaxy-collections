@@ -21,7 +21,7 @@ After installing the collection, you may directly use this role in your playbook
     - role: daeuniverse.general.update
 ```
 
-### Latest {main,pr,daily}-build
+### Latest build
 
 ```yaml
 # update.yml
@@ -32,7 +32,7 @@ After installing the collection, you may directly use this role in your playbook
 
   vars:
     - app: dae
-    - build_type: pr-build # options: [daily-build,pr-build,main-build]
+    - build_type: pr-build # options: [daily-build,pr-build,build]
     - latest: true
 
   roles:
