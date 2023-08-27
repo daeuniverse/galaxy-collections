@@ -33,7 +33,7 @@ After installing the collection, you may directly use this role in your playbook
   vars:
     - app: dae
     - build_type: pr-build # options: [daily-build,pr-build,build]
-    - latest: true
+    - latest: yes
 
   roles:
     - role: daeuniverse.general.update
