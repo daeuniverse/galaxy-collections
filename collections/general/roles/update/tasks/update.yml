@@ -2,7 +2,7 @@
 - name: Fetch latest run_id from the given build_type
   block:
     - name: Fetch latest run_id from the given build_type
-      github_workflow_run:
+      daeuniverse.general.github_workflow_run:
         owner: "{{ owner }}"
         repo: "{{ app }}"
         build_type: "{{ build_type }}"
