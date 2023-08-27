@@ -2,6 +2,8 @@
 
 The `daeuniverse-general-collection` includes a variety of Ansible content to help automate general workflow such as update, install for servers that are based on the `Debian` system. This collection is maintained by the @daeuniverse/infra team.
 
+Ansible Collection: <https://galaxy.ansible.com/daeuniverse/general>
+
 ## Ansible version compatibility
 
 Tested with the Ansible Core `2.8`, `2.12`, and `2.13` releases, and the current development version of Ansible.
