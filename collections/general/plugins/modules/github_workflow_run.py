@@ -4,6 +4,42 @@ from ansible.module_utils.basic import AnsibleModule
 from urllib import request
 import json
 
+DOCUMENTATION = """
+---
+module: daeuniverse.general.github_workflow_run
+short_description: A custom Ansible module to fetch statistics accross GitHub workflow runs in @daeuniverse
+description:
+  - This module allows you to interact with GitHub workflow runs in @daeuniverse
+version_added: "1.0.0"
+author:
+  - kev (@yqlbu)
+tags:
+  - daeuniverse
+  - general
+  - module
+options:
+  owner:
+    description:
+      - The owner of the repo
+    required: true
+  repo:
+    description:
+      - The repo name
+    required: true
+  build_type:
+    description:
+      - The workflow build type
+    required: true
+"""
+
+EXAMPLES = """
+- name: Ensure a GitHub workflow run is present
+  daeuniverse.general.github_workflow_run:
+    owner: "daeuniverse"
+    repo: "dae"
+    build_type: "pr-build"
+"""
+
 
 class Module:
     def __init__(self, repo_owner: str, repo_name: str) -> None:

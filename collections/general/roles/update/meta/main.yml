@@ -1,16 +1,14 @@
 ---
-dependencies: []
-
 galaxy_info:
   authors:
     - kev (@yqlbu)
-  description: ansible collection for general operations
+  description: ansible role to update @daeuniverse/dae,@daeuniverse/daed
   min_ansible_version: "2.8"
   license: "MIT"
   tags:
     - daeuniverse
     - general
-    - collection
+    - role
   platforms:
     - name: GenericLinux
       versions:
