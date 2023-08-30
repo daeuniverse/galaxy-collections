@@ -51,20 +51,6 @@ ansible-galaxy collection install -r requirements.yml --upgrade
 
 After installing the collection, you may directly use the roles in your playbook.
 
-```yaml
-# update.yml
----
-- name: Update dae on remote hosts
-  hosts: all
-  become: yes
-
-  vars:
-    - action_url: "https://github.com/daeuniverse/dae/actions/runs/5977749239"
-
-  roles:
-    - role: daeuniverse.general.update
-```
-
 ## Contribute to this collection
 
 We welcome community contributions to this collection. If you find problems, please open an issue or create a PR against the [daeuniverse/galaxy-collections](https://github.com/daeuniverse/galaxy-collections) repository. See [How to Contribute](https://github.com/daeuniverse/galaxy-collections/blob/master/docs/contribute.md) for more details.
