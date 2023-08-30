@@ -16,6 +16,8 @@ After installing the collection, you may directly use this role in your playbook
   vars:
     - app: dae
     - action_url: "https://github.com/daeuniverse/dae/actions/runs/5977749239"
+    - build_type: custom
+    - latest: no
 
   roles:
     - role: daeuniverse.general.update
