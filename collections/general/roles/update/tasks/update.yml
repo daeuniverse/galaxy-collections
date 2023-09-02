@@ -43,7 +43,7 @@
 - name: Download binary from GitHub Actions
   get_url:
     url: "{{ base_url }}/{{ run_id }}/{{ app }}-linux-x86_64.zip"
-    dest: "/tmp/{{ app }}/"
+    dest: "/tmp/{{ app }}/{{ app }}-linux-x86_64.zip"
   register: download
   when:
     - build_type != "release"
@@ -51,7 +51,7 @@
 - name: Download binary from GitHub Releases
   get_url:
     url: "{{ release_base_url }}/{{ release_tag }}/{{ app }}-linux-x86_64.zip"
-    dest: "/tmp/{{ app }}/"
+    dest: "/tmp/{{ app }}/{{ app }}-linux-x86_64.zip"
   register: download
   when:
     - build_type == "release"
@@ -61,7 +61,7 @@
   unarchive:
     remote_src: yes
     src: "/tmp/{{ app }}/{{ app }}-linux-x86_64.zip"
-    dest: /tmp/{{ app }}
+    dest: "/tmp/{{ app }}"
 
 - name: Copy binary
   copy:
@@ -74,7 +74,6 @@
   systemd:
     name: "{{ systemd_service }}"
     state: restarted
-  when: download.changed
 
 - name: Verify version
   block:
@@ -84,4 +83,3 @@
     - name: Print output
       debug:
         msg: "{{ version.stdout }}"
-  when: download.changed
