@@ -42,18 +42,26 @@ EXAMPLES = """
 
 
 class Module:
-    def __init__(self, repo_owner: str, repo_name: str) -> None:
+    def __init__(self, module: AnsibleModule, repo_owner: str, repo_name: str) -> None:
+        self.module = module
         self.repo = f'{repo_owner}/{repo_name}'
+        self.supported_build_type = ['build', 'pr-build', 'daily-build']
 
     def get_latest_workflow_run_id(self, build_type: str) -> int | None:
-        url = f'https://api.github.com/repos/{self.repo}/actions/workflows/{build_type}.yml/runs'
-        req = request.Request(url)
-        with request.urlopen(req) as response:
-            data = json.loads(response.read())
+        if build_type in self.supported_build_type:
+            url = f'https://api.github.com/repos/{self.repo}/actions/workflows/{build_type}.yml/runs'
+            req = request.Request(url)
+            with request.urlopen(req) as response:
+                data = json.loads(response.read())
 
-            if data['total_count'] > 0:
-                latest_run_id = data['workflow_runs'][0]['id']
-                return latest_run_id
+                if data['total_count'] > 0:
+                    latest_run_id = data['workflow_runs'][0]['id']
+                    return latest_run_id
+        else:
+            self.module.fail_json(
+                msg=f'Unsupported build_type. Available options are {self.supported_build_type}'
+            )
+            return None
 
         return None
 
@@ -68,7 +76,7 @@ def main():
     result = dict(changed=False, run_id=0, error='')
 
     try:
-        m = Module(module.params['owner'], module.params['repo'])
+        m = Module(module, module.params['owner'], module.params['repo'])
         latest_run_id = m.get_latest_workflow_run_id(module.params['build_type'])
         if latest_run_id is not None:
             result['run_id'] = latest_run_id
