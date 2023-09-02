@@ -2,6 +2,7 @@
 owner: daeuniverse
 app: dae
 base_url: https://nightly.link/daeuniverse/dae/actions/runs
+release_base_url: https://github.com/daeuniverse/dae/releases/download
 systemd_service: dae
 build_type: pr-build
-latest: yes
+latest: no
