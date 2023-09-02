@@ -24,38 +24,62 @@
     - action_url is defined
     - build_type == "custom"
 
+- name: Remove artifacts from /tmp/{{ app }}
+  block:
+    - name: Find files and subdirectories
+      ansible.builtin.find:
+        paths: "/tmp/{{ app }}"
+        recurse: yes
+        file_type: any
+      register: found_items
+
+    - name: Remove artifacts
+      ansible.builtin.file:
+        path: "{{ item.path }}"
+        state: absent
+      with_items: "{{ found_items.files }}"
+      when: found_items.matched > 0
+
 - name: Download binary from GitHub Actions
   get_url:
-    url: "{{ base_url }}/{{ run_id }}/dae-linux-x86_64.zip"
-    dest: /tmp/dae.zip
+    url: "{{ base_url }}/{{ run_id }}/{{ app }}-linux-x86_64.zip"
+    dest: "/tmp/{{ app }}/{{ app }}-linux-x86_64.zip"
   register: download
+  when:
+    - build_type != "release"
 
-- name: unzip dae.zip
+- name: Download binary from GitHub Releases
+  get_url:
+    url: "{{ release_base_url }}/{{ release_tag }}/{{ app }}-linux-x86_64.zip"
+    dest: "/tmp/{{ app }}/{{ app }}-linux-x86_64.zip"
+  register: download
+  when:
+    - build_type == "release"
+    - release_tag is defined
+
+- name: Unzip binary
   unarchive:
     remote_src: yes
-    src: /tmp/dae.zip
-    dest: /tmp
+    src: "/tmp/{{ app }}/{{ app }}-linux-x86_64.zip"
+    dest: "/tmp/{{ app }}"
 
 - name: Copy binary
   copy:
     remote_src: yes
-    src: /tmp/dae-linux-x86_64
-    dest: /usr/bin/dae
+    src: "/tmp/{{ app }}/{{ app }}-linux-x86_64"
+    dest: "/usr/bin/{{ app }}"
     mode: a+x
 
 - name: Restart systemd service
   systemd:
     name: "{{ systemd_service }}"
     state: restarted
-  when: download.changed
 
 - name: Verify version
   block:
     - name: Verify version
-      shell: |
-        dae --version
+      shell: "{{ app }} --version"
       register: version
     - name: Print output
       debug:
         msg: "{{ version.stdout }}"
-  when: download.changed
