@@ -43,7 +43,7 @@
 - name: Download binary from GitHub Actions
   get_url:
     url: "{{ base_url }}/{{ run_id }}/{{ app }}-linux-x86_64.zip"
-    dest: "/tmp/{{ app }}/{{ app }}.zip"
+    dest: "/tmp/{{ app }}/"
   register: download
   when:
     - build_type != "release"
