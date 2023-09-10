@@ -1,4 +1,12 @@
 ---
+- name: Remove raw artifacts
+  file:
+    state: absent
+    path: "{{ item }}"
+  loop:
+    - "{{ artifact_path }}/geosite.dat"
+    - "{{ artifact_path }}/geoip.dat"
+
 - name: Get latest release tag
   block:
     - name: Fetch metadata
