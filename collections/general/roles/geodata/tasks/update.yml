@@ -13,7 +13,7 @@
 - name: Download dat files with the latest release
   get_url:
     url: "https://github.com/{{ artifact_repo }}/releases/download/{{ latest_release.stdout }}/{{ item }}"
-    dest: "{{ base_path }}/{{ item }}"
+    dest: "{{ artifact_path }}/{{ item }}"
   loop:
     -  "geosite.dat"
     -  "geoip.dat"
