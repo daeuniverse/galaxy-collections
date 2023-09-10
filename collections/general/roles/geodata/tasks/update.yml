@@ -1,0 +1,36 @@
+---
+- name: Remove raw artifacts
+  file:
+    state: absent
+    path: "{{ item }}"
+  loop:
+    - "{{ artifact_path }}/geosite.dat"
+    - "{{ artifact_path }}/geoip.dat"
+
+- name: Get latest release tag
+  block:
+    - name: Fetch metadata
+      shell: 'curl https://api.github.com/repos/{{ artifact_repo }}/releases/latest --silent |  jq -r ".tag_name"'
+      register: latest_release
+
+    - name: Print result
+      debug:
+        msg: |
+          "release_url: https://github.com/{{ artifact_repo }}/releases/tag/{{ latest_release.stdout }}"
+
+- name: Download dat files with the latest release
+  get_url:
+    url: "https://github.com/{{ artifact_repo }}/releases/download/{{ latest_release.stdout }}/{{ item }}"
+    dest: "{{ artifact_path }}/{{ item }}"
+  loop:
+    -  "geosite.dat"
+    -  "geoip.dat"
+  register: download
+
+- name: Restart daemon service
+  service:
+    name: "{{ daemon_service_name }}"
+    state: restarted
+  when:
+    - restart_daemon
+    - download is changed
