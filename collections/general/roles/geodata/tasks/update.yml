@@ -1,5 +1,5 @@
 ---
-- name: Remove raw artifacts
+- name: Remove older artifacts
   file:
     state: absent
     path: "{{ item }}"
