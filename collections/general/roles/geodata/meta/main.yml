@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  authors:
+    - kev (@yqlbu)
+  description: ansible role to geodata artifacts
+  min_ansible_version: "2.8"
+  license: "MIT"
+  tags:
+    - daeuniverse
+    - general
+    - role
+  platforms:
+    - name: GenericLinux
+      versions:
+        - any

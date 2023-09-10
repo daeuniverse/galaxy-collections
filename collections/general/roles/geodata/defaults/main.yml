@@ -1,0 +1,5 @@
+---
+artifact_repo: "MetaCubeX/meta-rules-dat"
+config_path: "/etc/dae"
+daemon_service_name: "dae"
+restart_daemon: yes
